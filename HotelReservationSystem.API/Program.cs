@@ -1,6 +1,10 @@
 using Asp.Versioning;
 using Asp.Versioning.ApiExplorer;
+using HotelReservationSystem.Business.HotelBusiness;
+using HotelReservationSystem.Business.RoomBusiness;
 using HotelReservationSystem.Repository.Data;
+using HotelReservationSystem.Repository.RepositoryPattern;
+using HotelReservationSystem.Repository.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -33,6 +37,12 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 
 builder.Services.AddDbContext<HrsDbContext>(options =>
  options.UseSqlite(connectionString));
+
+
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IHotelBusiness, HotelBusiness>();
+builder.Services.AddScoped<IRoomBusiness, RoomBusiness>();
 
 var app = builder.Build();
 
