@@ -1,14 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-  <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
-    <ImplicitUsings>enable</ImplicitUsings>
-    <Nullable>enable</Nullable>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFramework>net10.0</TargetFramework>
+		<ImplicitUsings>enable</ImplicitUsings>
+		<Nullable>enable</Nullable>
+	</PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\HotelReservationSystem.Repository\HotelReservationSystem.Repository.csproj" />
-    <ProjectReference Include="..\HotelReservationSystem.Shared\HotelReservationSystem.Shared.csproj" />
-  </ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\HotelReservationSystem.Repository\HotelReservationSystem.Repository.csproj" />
+		<ProjectReference Include="..\HotelReservationSystem.Shared\HotelReservationSystem.Shared.csproj" />
+	</ItemGroup>
 
 </Project>
